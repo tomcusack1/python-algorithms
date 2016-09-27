@@ -1,5 +1,6 @@
-_linux
-inspection
+_linux/
+inspection/
+.idea/
 .gitignore
 LICENSE
 debugger.xml
