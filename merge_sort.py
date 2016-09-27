@@ -1,7 +1,8 @@
-a = range(10)
-b = range(20)
+def func():
+    # type: (list, list) -> object
+    for i in xrange(1):
+        print i
+        for j in xrange(2):
+            print j
 
-for i in a:
-    print i
-    for j in b:
-        print j
+func()
