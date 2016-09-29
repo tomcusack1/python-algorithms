@@ -9,23 +9,32 @@ def anagram(str1, str2):
     :string str2:
     :return: boolean
     '''
-    sorted_str1 = quicksort(str1)
-    sorted_str2 = quicksort(str2)
-    if (sorted_str1 == sorted_str2):
-        return True
-    return False
+    str1 = str1.replace(' ', '').lower()
+    str2 = str2.replace(' ', '').lower()
 
-def quicksort(lst):
-    '''
-    Sorts string values
-    :param string:
-    :return: string:
-    '''
+    # Edge case check
+    if len(str1) != len(str2):
+        # There are differing numbers of letters
+        return False
 
-    if not lst:
-        return []
-    return (quicksort([x for x in lst[1:] if x <  lst[0]])
-            + [lst[0]] +
-            quicksort([x for x in lst[1:] if x >= lst[0]]))
+    count = {}
 
-print anagram('abc', 'abb')  # Returns false
+    for letter in str1:
+        if letter in count:
+            count[letter] += 1
+        else:
+            count[letter] = 1
+
+    for letter in str2:
+        if letter in count:
+            count[letter] -= 1
+        else:
+            count[letter] = 1
+
+    for k in count:
+        if count[k] != 0:
+            return False
+
+    return True
+
+print anagram('abc', 'abc')
