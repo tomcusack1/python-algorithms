@@ -5,5 +5,7 @@ def word_split(phrase, list_of_words, output=None):
     for word in list_of_words:
         if phrase.startswith(word):
             output.append(word)
+            return word_split(phrase[len(word):], list_of_words, output)
+    return output
 
-word_split('Hello', ['Hello', 'hello'])
+print word_split('Hello', ['Hello', 'hello'])
