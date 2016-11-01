@@ -11,12 +11,10 @@ def fib_recursive(n):
         return fib_recursive(n - 1) + fib_recursive(n - 2)
 
 
-# Cache
-n = 10
-cache = [None] * (n + 1)
-
-
 def fib_dynamic(n):
+
+    # Cache
+    cache = [None] * (n + 1)
 
     # Base cases
     if n == 0 or n == 1:

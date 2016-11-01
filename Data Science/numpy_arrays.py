@@ -1,9 +1,15 @@
-import numpy as np
+from string import ascii_lowercase
 
-lst1 = [1, 2, 3, 4]
-lst2 = [11, 22, 33, 44]
-lst = [lst1, lst2]
 
-arr = np.array(lst)
-print np.arange(5, 50, 2)
-print arr.dtype
+def pangram(sentence):
+    # Construct an alphabet list
+    alphabet = list(ascii_lowercase)
+    s = set(sorted(sentence.replace(' ', '')))
+
+    if ''.join(sorted(alphabet)) == ''.join(sorted(s)):
+        return 'pangram'
+    else:
+        return 'not pangram'
+
+print pangram(raw_input().lower().strip())
+#print pangram('We promptly judged antique ivory buckles for the next prize'.lower())
