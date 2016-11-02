@@ -1,3 +1,6 @@
+def braces(s):
+    global_string = ""
+
 def balance_check(s):
 
     # Edge case check
