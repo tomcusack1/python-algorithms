@@ -30,8 +30,8 @@ class BinaryTree(object):
     def get_left_child(self):
         return self.left_child
 
-    def set_root_value(self, object):
-        self.key = object
+    def set_root_value(self, obj):
+        self.key = obj
 
     def get_root_value(self):
         return self.key
