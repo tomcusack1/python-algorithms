@@ -15,4 +15,4 @@ def rev_words(s):
         i += 1
     return " ".join(reversed(words))
 
-print rev_words('       space, before')
+print(rev_words('       space, before'))
