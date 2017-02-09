@@ -1,5 +1,6 @@
 import unittest
 
+
 def binary_search(array: list, element: int):
     """
     Recursive implementation of a binary search. List must be sorted.
@@ -23,6 +24,7 @@ def binary_search(array: list, element: int):
                 # Search in the top half
                 return binary_search(array[middle+1:], element)
     return True
+
 
 class TestBinarySearch(unittest.TestCase):
     def test_one(self):

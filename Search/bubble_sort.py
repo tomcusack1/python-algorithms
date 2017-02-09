@@ -1,16 +1,18 @@
 import unittest
 
-def bubble_sort(array):
+
+def bubble_sort(array: list) -> list:
     """
         Implementation of Bubble Sort.
     """
-    for n in range(len(array) -1, 0, -1):
+    for n in range(len(array)-1, 0, -1):
         for k in range(n):
             if array[k] > array[k+1]:
                 temp = array[k]
                 array[k] = array[k+1]
                 array[k+1] = temp
     return array
+
 
 class TestBubbleSort(unittest.TestCase):
     def test_one(self):
